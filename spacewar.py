@@ -60,11 +60,6 @@ def find_data_file(filename):
     return os.path.join(datadir, filename)
 
 
-
-# bg_file_path = find_data_file("spacewar_bg.png")
-# bg = pygame.image.load(bg_file_path).convert()
-
-
 font_file_path = find_data_file("good_times_rg.ttf")
 font_obj = pygame.font.Font(font_file_path, 15)
 music_path = find_data_file("TheComplex.mp3")
@@ -301,12 +296,6 @@ while True:
 
 	if dead:
 		WINDOW.fill(GAME_BACKGROUND_COLOR)
-		# WINDOW.blit(bg, (0,0))
-
-		# ship1.gun_angle = 0
-		# ship2.gun_angle = 180
-
-
 
 		winner_text_surface = font_obj.render(winner,
 			False, FONT_COLOR, WINDOW_COLOR)
@@ -316,8 +305,6 @@ while True:
 		username_text_surface2 = font_obj.render(username2, False, FONT_COLOR,
 			WINDOW_COLOR)
 
-	# 	winner_text_surface = font_obj.render('WINNER: ' + winner,
-	# False, FONT_COLOR, WINDOW_COLOR)
 		winner_surface_rect = winner_text_surface.get_rect()
 		winner_surface_rect.center = (WINDOW_WIDTH/2.0, (WINDOW_HEIGHT/2.0) + 110)
 
@@ -361,8 +348,6 @@ while True:
 		for bullet in bullets2:
 			bullet.move(bullets2)
 			GAME_WINDOW.blit(bullet.sprite_surface, bullet.rect)
-			# print(bullet)
-
 
 		pygame.draw.rect(GAME_WINDOW, (255, 255, 255), username_input_rect1, 2)
 		pygame.draw.rect(GAME_WINDOW, (255, 255, 255), username_input_rect2, 2)
@@ -485,8 +470,7 @@ while True:
 			username1 = "ENTER NAME AND SECTION"
 			username2 = "ENTER NAME AND SECTION"
 			pygame.time.delay(2000)
-			# ship1.rect.center = (GAME_WINDOW_WIDTH/2.0, GAME_WINDOW_HEIGHT - 150)
-			# ship2.rect.center = (GAME_WINDOW_WIDTH/2.0, 150)
+
 			ship1.rect.center = (20 + 50, GAME_WINDOW_HEIGHT - 20 - 80)
 			ship2.rect.center = (GAME_WINDOW_WIDTH - 20 - 50, 20 + 80)
 
@@ -496,8 +480,6 @@ while True:
 			username_surface_rect2 = (username_input_rect2.left + 30,
 				username_input_rect2.top + 5)
 
-# ship1 = Spaceship((129, 236, 236), (20 + 50, GAME_WINDOW_HEIGHT - 20 - 50), 1, 0)
-# ship2 = Spaceship((250, 177, 160), (GAME_WINDOW_WIDTH - 20 - 50, 20 + 50), 2, 180)
 			for bullet in bullets2:
 				bullets2.remove(bullet)
 			for bullet in bullets1:
