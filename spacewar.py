@@ -59,9 +59,7 @@ def find_data_file(filename):
 
     return os.path.join(datadir, filename)
 
-
-font_file_path = find_data_file("good_times_rg.ttf")
-font_obj = pygame.font.Font(font_file_path, 15)
+font_obj = pygame.font.SysFont('arial', 15)
 music_path = find_data_file("TheComplex.mp3")
 
 pygame.mixer.music.load(music_path)

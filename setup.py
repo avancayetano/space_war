@@ -8,6 +8,6 @@ cx_Freeze.setup(
     author="avan",
     description="hatdog",
     options={"build_exe": {"packages":["pygame", "json"],
-                           "include_files":["good_times_rg.ttf", "TheComplex.mp3"]}},
+                           "include_files":["TheComplex.mp3"]}},
     executables = executables
     )
